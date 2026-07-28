@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash 2026</title>
+    <!-- Futuristic & Coding Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="sidebar-collapsed">
+
+    <header>
+        <div class="logo-container">
+            <button class="sidebar-toggle" id="toggleBtn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/hash-logo.png" alt="Hash 2026 Logo" class="logo-img">
+                    <span class="logo-text">Hash 2026</span>
+                
+                </a>
+            </div>
+        </div>
+
+        <nav class="header-nav" aria-label="Primary Navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="proshow.html">Proshow</a></li>
+                <li><a href="#FAQS">FAQS</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+            <div class="register butn">
+                <a href="register.html">Register Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-container">
+        <aside>
+            <nav class="menu-nav" aria-label="Sidebar Menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="define.html">#Define Hackathon</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="proshow.html">Proshow</a></li>
+                    <li><a href="team.html">Meet our Team</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="#logout">Log Out</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="sidebar-overlay" id="menuOverlay"></div>
+
+        <main class="home-page">
+            <section class="hero" id="home">
+                <div class="hero-card">
+                    <div>
+                        <p class="eyebrow">&lt;Annual Tech Fest /&gt;</p>
+                        <h1>Hash 2026</h1>
+                        <p class="hero-text">A vibrant celebration of innovation, coding, creativity, and collaboration.
+                        </p>
+                        <div class="hero-actions">
+                            <a class="btn-primary" href="register.html">Join Now</a>
+                            <a class="btn-secondary" href="events.html">Explore Events</a>
+                        </div>
+                    </div>
+                    <div class="hero-info">
+                        <h3>What to expect</h3>
+                        <ul>
+                            <li>Hackathons and coding battles</li>
+                            <li>Workshops by industry experts</li>
+                            <li>Live proshows and networking</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timeline Section -->
+<section class="timeline-section" id="timeline">
+    <h2 class="section-title">Timeline</h2>
+    
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="timeline-date">DAY 1 — OCT 12</span>
+                <h3>Opening Ceremony & Hackathon Launch</h3>
+                <p>Registration, keynote speeches, and kickoff for the 24-hour coding marathon.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="timeline-date">DAY 2 — OCT 13</span>
+                <h3>Tech Expos & Esports Finals</h3>
+                <p>Robotics showcases, AI paper presentations, and live gaming arena finals.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <span class="timeline-date">DAY 3 — OCT 14</span>
+                <h3>ProShow & Award Ceremony</h3>
+                <p>Prize distribution for hackathon winners followed by the flagship concert night.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Schedule CTA Button -->
+    <div class="schedule-cta">
+        <a href="#schedule" class="btn-schedule">View Detailed Schedule &rarr;</a>
+    </div>
+</section>
+
+<!-- Detailed Schedule Section -->
+<section class="schedule-section" id="schedule">
+    <h2 class="section-title">EVENT SCHEDULE</h2>
+
+    <!-- Day Filter Tabs -->
+    <div class="schedule-tabs">
+        <button class="tab-btn active" onclick="switchDay('day1', this)">Day 1 (Oct 12)</button>
+        <button class="tab-btn" onclick="switchDay('day2', this)">Day 2 (Oct 13)</button>
+        <button class="tab-btn" onclick="switchDay('day3', this)">Day 3 (Oct 14)</button>
+    </div>
+
+    <!-- Schedule Tables -->
+    <div class="table-container">
+        <!-- Day 1 Schedule -->
+        <table class="schedule-table active" id="day1">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Event</th>
+                    <th>Venue</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="time">09:00 AM</td>
+                    <td>Inauguration & Keynote</td>
+                    <td>Main Auditorium</td>
+                    <td><span class="badge badge-general">General</span></td>
+                </tr>
+                <tr>
+                    <td class="time">11:00 AM</td>
+                    <td>Code Sprint 2026 Begins</td>
+                    <td>Lab 03 & 04</td>
+                    <td><span class="badge badge-coding">Coding</span></td>
+                </tr>
+                <tr>
+                    <td class="time">02:00 PM</td>
+                    <td>AI/ML Workshop</td>
+                    <td>Seminar Hall B</td>
+                    <td><span class="badge badge-tech">Workshop</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Day 2 Schedule -->
+        <table class="schedule-table" id="day2">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Event</th>
+                    <th>Venue</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="time">09:30 AM</td>
+                    <td>RoboWars Qualifier</td>
+                    <td>Open Arena</td>
+                    <td><span class="badge badge-robotics">Robotics</span></td>
+                </tr>
+                <tr>
+                    <td class="time">11:00 AM</td>
+                    <td>Code Sprint Hackathon Ends</td>
+                    <td>Lab 03 & 04</td>
+                    <td><span class="badge badge-coding">Coding</span></td>
+                </tr>
+                <tr>
+                    <td class="time">03:00 PM</td>
+                    <td>Valorant Esports Finals</td>
+                    <td>Auditorium Gaming Hub</td>
+                    <td><span class="badge badge-gaming">Gaming</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Day 3 Schedule -->
+        <table class="schedule-table" id="day3">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Event</th>
+                    <th>Venue</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="time">10:00 AM</td>
+                    <td>Paper Presentation Finals</td>
+                    <td>Conference Room A</td>
+                    <td><span class="badge badge-tech">Paper</span></td>
+                </tr>
+                <tr>
+                    <td class="time">04:00 PM</td>
+                    <td>Valedictory & Prize Distribution</td>
+                    <td>Main Stage</td>
+                    <td><span class="badge badge-general">Ceremony</span></td>
+                </tr>
+                <tr>
+                    <td class="time">06:30 PM</td>
+                    <td>ProShow EDM Night</td>
+                    <td>Outdoor Grounds</td>
+                    <td><span class="badge badge-general">ProShow</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2026 Hash Tech Fest. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('toggleBtn');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        function toggleSidebar() {
+            if (window.innerWidth > 768) {
+                document.body.classList.toggle('sidebar-collapsed');
+                document.body.classList.remove('sidebar-open');
+            } else {
+                document.body.classList.toggle('sidebar-open');
+                document.body.classList.remove('sidebar-collapsed');
+            }
+        }
+
+        function closeSidebar() {
+            document.body.classList.remove('sidebar-open');
+            document.body.classList.add('sidebar-collapsed');
+        }
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', toggleSidebar);
+        }
+
+        if (menuOverlay) {
+            menuOverlay.addEventListener('click', closeSidebar);
+        }
+    </script>
+</body>
+
+</html>

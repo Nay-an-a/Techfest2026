@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Hash 2026</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <!-- FIXED: Added interactive retractable menu button -->
+        <button class="sidebar-toggle" id="toggleBtn" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo">
+            <a href="index.html">Hash 2026</a>
+        </div>
+    </div>
+    
+    <nav class="header-nav" aria-label="Primary Navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="proshow.html">Proshow</a></li>
+            <li><a href="#FAQS">FAQS</a></li>
+            <li><a href="contactus.html">Contact Us</a></li> 
+        </ul>
+        <div class="register butn">
+            <a href="register.html">Register Now</a>
+        </div>
+    </nav>
+</header>
+
+<!-- FIXED: Extracted page-container wrapper so it wraps the sidebar + main correctly -->
+<div class="page-container">
+    <aside>
+        <nav class="menu-nav" aria-label="Sidebar Menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="define.html">#Define Hackathon</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="workshops.html">Workshops</a></li>
+                <li><a href="proshow.html">Proshow</a></li>
+                <li><a href="team.html">Meet our Team</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#logout">Log Out</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- NEW: Dimmed overlay effect layout anchor for smartphone views -->
+    <div class="sidebar-overlay" id="menuOverlay"></div>
+
+    <main class="auth-wrapper">
+        <div class="auth-container">
+            
+            <div class="toggle-btns">
+                <button type="button" id="loginBtn" onclick="slideForm('login')" class="active-btn">Login</button>
+                <button type="button" id="registerBtn" onclick="slideForm('register')">Register</button>
+            </div>
+
+            <div class="form-track" id="formTrack">
+                
+                <div class="form-panel login-panel">
+                    <form action="profile.html">
+                        <h2>Welcome Back</h2>
+                        <label for="loginEmail">Email Address:</label>
+                        <input type="email" id="loginEmail" name="loginEmail" required placeholder="Enter your email">
+                        
+                        <label for="loginPass">Password:</label>
+                        <input type="password" id="loginPass" name="loginPass" required placeholder="Enter password">
+                        
+                        <button type="submit" class="btn-submit">Log In</button>
+                    </form>
+                </div>
+
+                <div class="form-panel register-panel">
+                    <form action="profile.html">
+                        <h2>Create your Hash Account</h2>
+                        
+                        <label for="username">Full Name:</label>
+                        <input type="text" id="username" name="participantName" required placeholder="John Doe">
+                        
+                        <label for="useremail">Email Address:</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="email" id="useremail" name="participantEmail" required placeholder="college@domain.edu" style="flex: 1;">
+                            <button type="button" style="padding: 0 10px; border-radius: 6px; border: 1px solid #ccc; cursor: pointer; background: #eef2f3;">Send OTP</button>
+                        </div>
+
+                        <label for="otp">Enter OTP:</label>
+                        <input type="number" id="otp" name="otp" placeholder="123456">
+
+                        <label for="whatsapp">WhatsApp Number:</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" pattern="[0-9]{10}" required placeholder="10-digit number">
+                        
+                        <label for="college">College Name:</label>
+                        <input type="text" id="college" name="collegeName" list="college-list" required placeholder="Type to search your college...">
+
+                        <datalist id="college-list">
+                            <option value="National Institute of Technology, Calicut (NITC)">
+                            <option value="Indian Institute of Technology, Madras (IITM)">
+                            <option value="College of Engineering, Trivandrum (CET)">
+                            <option value="Government Engineering College, Thrissur (GECT)">
+                            <option value="Amrita Vishwa Vidyapeetham">
+                            <option value="Cochin University of Science and Technology (CUSAT)">
+                        </datalist>
+
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" required>
+                        
+                        <label>Gender:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="male" name="gender" value="male" required> <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="female"> <label for="female">Female</label>
+                            <input type="radio" id="other" name="gender" value="other"> <label for="other">Other</label>
+                        </div>
+
+                        <label for="idcard">Upload College ID:</label>
+                        <input type="file" id="idcard" name="idcard" accept="image/*, .pdf" required>
+
+                        <label for="branch">Select Branch:</label>
+                        <select id="branch" name="branch" required>
+                            <option value="">-- Choose Branch --</option>
+                            <option value="cs">Computer Science</option>
+                            <option value="ec">Electronics</option>
+                            <option value="me">Mechanical</option>
+                            <option value="cv">Civil</option>
+                            <option value="other">Other</option>
+                        </select>
+
+                        <label>Events to Register:</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="event1" name="events" value="hackathon"> <label for="event1">Hackathon</label><br>
+                            <input type="checkbox" id="event2" name="events" value="proshow"> <label for="event2">Proshow Pass</label><br>
+                            <input type="checkbox" id="event3" name="events" value="robotics"> <label for="event3">RoboWars</label>
+                        </div>
+
+                        <label for="queries">Any Queries or Accommodations?</label>
+                        <textarea id="queries" name="queries" rows="3" placeholder="Type here..."></textarea>
+
+                        <button type="submit" class="btn-submit">Register Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- FIXED: Synchronized drawer events & toggle states safely -->
+<script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    document.body.classList.add('sidebar-collapsed');
+    document.body.classList.remove('sidebar-open');
+
+    function slideForm(type) {
+        const track = document.getElementById('formTrack');
+        const loginBtn = document.getElementById('loginBtn');
+        const registerBtn = document.getElementById('registerBtn');
+        
+        if(type === 'register') {
+            track.classList.add('show-register');
+            registerBtn.classList.add('active-btn');
+            loginBtn.classList.remove('active-btn');
+        } else {
+            track.classList.remove('show-register');
+            loginBtn.classList.add('active-btn');
+            registerBtn.classList.remove('active-btn');
+        }
+    }
+
+    function toggleSidebar() {
+        if (window.innerWidth > 768) {
+            document.body.classList.toggle('sidebar-collapsed');
+            document.body.classList.remove('sidebar-open');
+        } else {
+            document.body.classList.toggle('sidebar-open');
+            document.body.classList.remove('sidebar-collapsed');
+        }
+    }
+
+    function closeSidebar() {
+        document.body.classList.remove('sidebar-open');
+        document.body.classList.add('sidebar-collapsed');
+    }
+
+    toggleBtn.addEventListener('click', toggleSidebar);
+    menuOverlay.addEventListener('click', closeSidebar);
+</script>
+
+</body>
+</html>
+
