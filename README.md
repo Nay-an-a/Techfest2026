@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # TechFest 2026 Website
+=======
+# TechFest 2026 Portal
+>>>>>>> 6b82731 (Rename title to Portal)
 
 React (Vite) frontend + Express/MongoDB backend.
 
