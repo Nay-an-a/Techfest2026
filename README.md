@@ -31,3 +31,5 @@ Tests: `cd backend && npm test`. Build: `npm run build`.
 - **Backend (Render):** Web Service, root directory `backend`, start command `npm start`, env `MONGO_URI`, `JWT_SECRET`.
 - **Frontend (Netlify):** uses `netlify.toml`. Put your Render URL in its `/api/*` redirect. The API stays on the
   same site as the page, which keeps the `sameSite: "strict"` cookie working.
+
+Built for Web Technology Laboratory (23CSB40B).
