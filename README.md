@@ -1,4 +1,4 @@
-# TechFest 2026
+# TechFest 2026 Website
 
 React (Vite) frontend + Express/MongoDB backend.
 
