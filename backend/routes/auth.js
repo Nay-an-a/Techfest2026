@@ -24,24 +24,41 @@ router.post("/register", async (req, res, next) => {
 });
 
 // POST /api/auth/login -> Authenticate user and return JWT
+// POST /api/auth/login -> Authenticate user and return JWT
 router.post("/login", async (req, res, next) => {
   try {
     const { email, password } = req.body;
+
+    // Reject non-string inputs before querying MongoDB
+    if (typeof email !== "string" || typeof password !== "string") {
+      return res.status(401).json({ message: "Invalid login" });
+    }
+
     const user = await User.findOne({ email });
+
     if (!user) {
       return res.status(401).json({ message: "Invalid login" });
     }
+
     const ok = await bcrypt.compare(password, user.password);
+
     if (!ok) {
       return res.status(401).json({ message: "Invalid login" });
     }
+
     const token = jwt.sign(
       { id: user._id, role: user.role },
       process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
-    // httpOnly: JS can't read it (XSS can't steal it); secure: HTTPS only; sameSite strict: not sent on cross-site requests (CSRF)
-    res.cookie("token", token, { httpOnly: true, secure: true, sameSite: "strict", maxAge: 60 * 60 * 1000 });
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "strict",
+      maxAge: 60 * 60 * 1000
+    });
+
     res.json({ name: user.name, role: user.role });
   } catch (err) {
     next(err);
