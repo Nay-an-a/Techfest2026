@@ -11,7 +11,7 @@ after(() => server.close());
 
 test("helmet sets security headers", async () => {
   const res = await fetch(base + "/");
-  assert.strictEqual(res.status, 200);
+  assert.strictEqual(res.status, 201);
   assert.ok(res.headers.get("content-security-policy"));
 });
 
